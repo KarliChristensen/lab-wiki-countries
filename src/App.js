@@ -1,9 +1,21 @@
 import './App.css';
-import 'src/countries.json';
+import Navbar from './components/Navbar';
+import CountriesList from './components/CountriesList';
+import CountryDetails from './components/CountryDetails';
+import { Route, Routes } from 'react-router-dom';
 
-const countries = require('src/countries.json');
+const countries = require('./countries.json');
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<CountriesList countries={countries} />} />
+        <Route path="/country/:id" element={<CountryDetails countries={countries} />}
+        />
+      </Routes>
+    </div>
+  );
 }
 export default App;
