@@ -9,11 +9,15 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<CountriesList countries={countries} props={countries}/>} />
-        <Route path="/country/:id" element={<CountryDetails countries={countries} />}
-        />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/" element={<CountriesList countries={countries} />} />
+          <Route
+            path="/:id"
+            element={<CountryDetails countries={countries} />}
+          />
+        </Routes>
+      </div>
     </div>
   );
 }
